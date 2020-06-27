@@ -12,11 +12,8 @@ import spark.staticfiles.StaticFilesConfiguration;
 public class CustomServerFactory implements EmbeddedServerFactory {
     private ThreadPool threadPool;
     private boolean httpOnly = true;
-    int port;
 
-    public CustomServerFactory(int port) {
-        System.out.println("+===================");
-         this.port = port;
+    public CustomServerFactory() {
     }
 
     @Override
@@ -26,7 +23,7 @@ public class CustomServerFactory implements EmbeddedServerFactory {
 
         JettyHandler handler = new JettyHandler(matcherFilter);
         handler.getSessionCookieConfig().setHttpOnly(this.httpOnly);
-        return (new CustomEmbeddedServer(handler, port)).withThreadPool(this.threadPool);
+        return (new CustomEmbeddedServer(handler)).withThreadPool(this.threadPool);
     }
 
     public CustomServerFactory withThreadPool(ThreadPool threadPool) {

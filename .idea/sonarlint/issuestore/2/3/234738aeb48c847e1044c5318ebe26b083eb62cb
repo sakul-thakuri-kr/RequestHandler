@@ -1,0 +1,10 @@
+
+W
+java:S2209"5Change this instance-reference to a static reference.(‚´‘»üÿÿÿÿ8œÕ³‰¯.
+K
+java:S2440")Remove this instantiation of "GetMapper".(µ¦³õşÿÿÿÿ8ÇÃ³‰¯.
+`
+java:S1128">Remove this unused import 'ServerFactory.CustomServerFactory'.(—À²„ùÿÿÿÿ8âèò¯.
+c
+java:S1128"ARemove this unused import 'spark.embeddedserver.EmbeddedServers'.(Ú³åÎùÿÿÿÿ8âèò¯.
+v	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(í÷–‡8âş¬‰¯.

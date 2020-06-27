@@ -1,0 +1,19 @@
+
+W
+java:S2209&"5Change this instance-reference to a static reference.(ç•ïöşÿÿÿÿ8ç¯ç¯.
+U	java:S106'"9Replace this use of System.out or System.err by a logger.(»‚òâ8Ğø÷¯.
+Z
+java:S1197Z"8Move the array designator from the variable to the type.(üÍøÏÿÿÿÿÿ8„¼´¯.
+U	java:S106}"9Replace this use of System.out or System.err by a logger.(şı ø8ëÄÿ¯.
+j
+java:S2095U"MUse try-with-resources or close this "ServerConnector" in a "finally" clause.(ó†íÑ8„¼´¯.
+j
+java:S2095W"MUse try-with-resources or close this "ServerConnector" in a "finally" clause.(ıó¨8„¼´¯.
+T
+java:S2589n"7Remove this expression which always evaluates to "true"(ÉÀŒ8„¼´¯.
+C
+java:S3010&"!Remove this assignment of "port".(ç•ïöşÿÿÿÿ8ç¯ç¯.
+Z	java:S106"9Replace this use of System.out or System.err by a logger.(Ÿû¶¡ıÿÿÿÿ8Ş˜ÿ¯.
+t
+java:S37763"RRefactor this method to reduce its Cognitive Complexity from 24 to the 15 allowed.(ä‡ªÔşÿÿÿÿ8„¼´¯.
+t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Æ­áÑüÿÿÿÿ

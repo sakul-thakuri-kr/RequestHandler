@@ -24,7 +24,7 @@ import java.util.Map;
 import java.util.Optional;
 
 public class CustomEmbeddedServer implements EmbeddedServer {
-    private static int port = 8080;
+    private static int DEFAULT_PORT = 4567;
     private static final String NAME = "Spark";
     private final Handler handler;
     private Server server;
@@ -33,10 +33,9 @@ public class CustomEmbeddedServer implements EmbeddedServer {
     private Optional<Integer> webSocketIdleTimeoutMillis;
     private ThreadPool threadPool = null;
 
-    public CustomEmbeddedServer(Handler handler, int port) {
+    public CustomEmbeddedServer(Handler handler) {
         this.handler = handler;
-        this.port = port;
-        System.out.println(port);
+        System.out.println("from server");
     }
 
     @Override
@@ -49,7 +48,7 @@ public class CustomEmbeddedServer implements EmbeddedServer {
 
     @Override
     public int ignite(String host,
-                       int port,
+                      int port,
                       SslStores sslStores,
                       int maxThreads,
                       int minThreads,
@@ -61,8 +60,8 @@ public class CustomEmbeddedServer implements EmbeddedServer {
             try (ServerSocket s = new ServerSocket(0)) {
                 port = s.getLocalPort();
             } catch (IOException e) {
-                logger.error("Could not get first available port (port set to 0), using default: {}", CustomEmbeddedServer.port);
-                port = CustomEmbeddedServer.port;
+                logger.error("Could not get first available port (port set to 0), using default: {}", CustomEmbeddedServer.DEFAULT_PORT);
+                port = CustomEmbeddedServer.DEFAULT_PORT;
             }
         }
 
@@ -122,9 +121,8 @@ public class CustomEmbeddedServer implements EmbeddedServer {
         } else {
             logger.info(">> Listening on {}:{}", host, port);
         }
-        System.out.println(":::::::::::_____-:::::::");
         server.start();
-        System.out.println("::::::::::::::::::");
+
         return port;
     }
 
