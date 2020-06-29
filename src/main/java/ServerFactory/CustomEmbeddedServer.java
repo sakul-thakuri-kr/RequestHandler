@@ -86,7 +86,7 @@ public class CustomEmbeddedServer implements EmbeddedServer {
             connector = SocketConnectorFactory.createSecureSocketConnector(server, host, port, sslStores);
         }
 
-        Connector previousConnectors[] = server.getConnectors();
+        Connector[] previousConnectors = server.getConnectors();
         server = connector.getServer();
         if (previousConnectors.length != 0) {
             server.setConnectors(previousConnectors);
@@ -126,17 +126,11 @@ public class CustomEmbeddedServer implements EmbeddedServer {
         return port;
     }
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
     public void join() throws InterruptedException {
         server.join();
     }
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
     public void extinguish() {
         logger.info(">>> {} shutting down ...", NAME);
@@ -159,13 +153,6 @@ public class CustomEmbeddedServer implements EmbeddedServer {
         return server.getThreadPool().getThreads() - server.getThreadPool().getIdleThreads();
     }
 
-    /**
-     * Sets optional thread pool for jetty server.  This is useful for overriding the default thread pool
-     * behaviour for example io.dropwizard.metrics.jetty9.InstrumentedQueuedThreadPool.
-     *
-     * @param threadPool thread pool
-     * @return Builder pattern - returns this instance
-     */
     public CustomEmbeddedServer withThreadPool(ThreadPool threadPool) {
         this.threadPool = threadPool;
         return this;

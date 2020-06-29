@@ -1,13 +1,21 @@
 package HttpMapper;
 
+import ServerFactory.CustomServerFactory;
 import com.google.gson.Gson;
+import spark.embeddedserver.EmbeddedServers;
 
-import static spark.Spark.get;
-import static spark.Spark.post;
+import static spark.Spark.*;
 
 public class Mapper {
 
-    public Mapper () {}
+    public Mapper () {
+        EmbeddedServers.add(EmbeddedServers.Identifiers.JETTY, new CustomServerFactory());
+    }
+
+    public Mapper (int portNo) {
+        port(portNo);
+        EmbeddedServers.add(EmbeddedServers.Identifiers.JETTY, new CustomServerFactory());
+    }
 
     public static void getk(String path, Funct funct) {
         Gson gson = new Gson();

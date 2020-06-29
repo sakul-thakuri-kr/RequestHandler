@@ -2,16 +2,11 @@ package Starter;
 
 import HttpMapper.Mapper;
 import com.google.gson.Gson;
-import static Starter.ServerStarter.*;
-import static spark.Spark.port;
-
 import java.util.HashMap;
 import java.util.Map;
 public class Main {
 
     public static void main(String[] args) {
-
-        setUpServer();
 
         Mapper mapper = new Mapper();
         Map<Integer, String> map = new HashMap<>();
