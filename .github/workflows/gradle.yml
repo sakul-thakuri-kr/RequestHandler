@@ -24,9 +24,9 @@ jobs:
       with:
         host: '0.0.0.0'
         port: 9042
-        username:
-        password:
+        username: abc
+        password: abc
         connect-timeout: 30
         keyspace: test
-        scripts_path: './scripts':  
+        scripts_path: '/'  
     
